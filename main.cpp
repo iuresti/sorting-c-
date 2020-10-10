@@ -13,16 +13,16 @@ void sort(T [], Comparator, int );
 int main()
 {
     //clock_t clock1;
-    Alumno alumno();
-    string datos[] = {"Edilberto", "Torres", "Jose", "Lopez"};
-    sort(datos,StringAscendantComparator(), 5);
+    Alumno alumno(); // <<<--- No se usan paréntesis para instanciar objetos en C++ a menos que reciban parámetros
+    string datos[] = {"Edilberto", "Torres", "Jose", "Lopez"}; 
+    sort(datos,StringAscendantComparator(), 5); 
 
     //alumno.setfirstName("EDILBERTO");
     return 0;
 }
 
 template <typename T>
-void sort(T datos[], Comparator comparator, int n)
+void sort(T datos[], Comparator comparator, int n) // Para usar los métodos virtuales, se debe hacer a través de apuntadores así que aquí deberías recibir Comparator *comparator
 {
     for (int i = 0; i < n; i++)
     {
